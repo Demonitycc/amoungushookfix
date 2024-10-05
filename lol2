@@ -1,0 +1,20 @@
+local oldrequest = request
+local hwid = gethwid()
+local http_list = {
+    "httpRequest",
+    "http_request",
+    "httprequest",
+    "request"
+}
+
+http.request = function(args)
+    print'blocked'
+    return { Success = true, StatusCode = 200, StatusMessage = "OK", Headers = {}, Body = "{\"success\": true}" }
+end
+
+for i, v in pairs(http_list) do
+    getgenv()[v] = function(args)
+        print'blocked'
+        return { Success = true, StatusCode = 200, StatusMessage = "OK", Headers = {}, Body = "{\"success\": true}" }
+    end
+end
